@@ -1,1 +1,205 @@
 created test1.txt
+# CaseCraft AI — Frontend Development Prompt
+
+You are the lead frontend engineer for *CaseCraft AI*, an AI-powered legal case preparation and drafting assistant.
+
+Build a production-quality frontend web application for lawyers using:
+
+* Next.js with App Router
+* TypeScript
+* Tailwind CSS
+* shadcn/ui
+* Lucide icons
+* REST API integration with a separate FastAPI backend
+* JWT-based authentication
+* Responsive desktop-first design
+* Clean component architecture
+* Strong TypeScript typing
+* Accessible UI
+* Loading, empty, success and error states
+
+## PRODUCT CONTEXT
+
+CaseCraft AI helps lawyers transform scattered case documents and client information into:
+
+1. Structured case information
+2. Extracted people, dates, places and events
+3. Chronological case timelines
+4. Evidence mappings
+5. Missing-document alerts
+6. AI-generated case summaries
+7. AI-generated draft petitions
+8. Annexure lists
+
+The application is a HUMAN-IN-THE-LOOP legal assistant.
+
+The AI does NOT make final legal decisions.
+
+Every AI-generated result must clearly communicate that it requires lawyer review and verification.
+
+Do not design the application as an autonomous legal decision-making system.
+
+## FRONTEND RESPONSIBILITY
+
+Build the complete lawyer-facing frontend.
+
+The backend, document-processing pipeline and RAG/LLM services will exist separately and will communicate with this frontend through REST APIs.
+
+Do NOT implement Python, OCR, NLP, RAG or LLM logic inside the frontend.
+
+Create clean API service functions/interfaces so the frontend can connect to the FastAPI backend later.
+
+## VISUAL DESIGN
+
+Create a modern professional legal-tech SaaS interface.
+
+Design goals:
+
+* Professional
+* Minimal
+* Trustworthy
+* Clean
+* Premium
+* Easy for lawyers to use
+* Information-dense without being cluttered
+* Desktop-first but responsive
+* Strong visual hierarchy
+
+Avoid:
+
+* Generic AI landing-page aesthetics
+* Excessive gradients
+* Neon colors
+* Overly rounded cards
+* Gaming-style UI
+* Excessive animations
+* Unnecessary decorative elements
+
+Use a restrained professional color system and excellent typography.
+
+Use shadcn/ui components wherever appropriate.
+
+Use Lucide icons consistently.
+
+## APPLICATION STRUCTURE
+
+Create the following routes:
+
+/login
+
+/dashboard
+
+/cases
+
+/cases/new
+
+/cases/[caseId]
+
+/cases/[caseId]/documents
+
+/cases/[caseId]/timeline
+
+/cases/[caseId]/evidence
+
+/cases/[caseId]/missing-documents
+
+/cases/[caseId]/summary
+
+/cases/[caseId]/draft
+
+/settings
+
+## GLOBAL LAYOUT
+
+After login, use a persistent application layout.
+
+Left sidebar:
+
+* CaseCraft AI logo/name
+* Dashboard
+* Cases
+* Recent Cases
+* Settings
+
+Bottom of sidebar:
+
+* Logged-in lawyer profile
+* Role
+* Logout
+
+Top header:
+
+* Page title
+* Global search
+* Notifications
+* Lawyer profile menu
+
+The sidebar should collapse responsively on smaller screens.
+
+## LOGIN PAGE
+
+Create a professional login screen.
+
+Include:
+
+* CaseCraft AI branding
+* Email input
+* Password input
+* Show/hide password
+* Remember me
+* Login button
+* Forgot password
+* Loading state
+* Validation errors
+* API error handling
+
+Do not use fake authentication logic in the final architecture.
+
+Create an authentication service abstraction that can later connect to:
+
+POST /auth/login
+
+JWT should be stored and handled securely according to the application's authentication strategy.
+
+## DASHBOARD
+
+Create a lawyer dashboard.
+
+Display:
+
+* Total cases
+* Active cases
+* Documents processed
+* Pending reviews
+* Missing documents
+
+Create a "Recent Cases" section.
+
+Each case should display:
+
+* Case name
+* Case number
+* Case type
+* Last updated
+* Document count
+* Processing status
+
+Create a "Recent Activity" section.
+
+Include a prominent "Create New Case" action.
+
+Include useful loading skeletons and empty states.
+
+## CASE MANAGEMENT
+
+Create a cases page.
+
+Features:
+
+* Search cases
+* Filter cases
+* Sort cases
+* Create case
+* Open case
+* Edit case
+* Case status
